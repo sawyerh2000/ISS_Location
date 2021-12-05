@@ -35,15 +35,15 @@ def country(coords):
 
     conn = http.client.HTTPConnection('api.positionstack.com')  #connect to server
 
-    params = urllib.parse.urlencode({
+    params = urllib.parse.urlencode({         #encode url parameters (api key and coords)
         'access_key' : ACCESS_KEY,
         'query' : coords
     })
 
-    conn.request('GET', '/v1/reverse?{}'.format(params))
-    res = conn.getresponse()
-    data = res.read()
-    print(json.loads(data.decode('utf-8'))['data'])
+    conn.request('GET', '/v1/reverse?{}'.format(params)) #GET request to endpoint on server
+    res = conn.getresponse() #reponse from endpoint (json data)
+    data = res.read()  #reads data 
+    print(json.loads(data.decode('utf-8'))['data']) #decode data into readable format and load into dict and print data key from dict
  
 country(iss_location())
 
