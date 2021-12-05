@@ -43,7 +43,9 @@ def country(coords):
     conn.request('GET', '/v1/reverse?{}'.format(params)) #GET request to endpoint on server
     res = conn.getresponse() #reponse from endpoint (json data)
     data = res.read()  #reads data 
-    print(json.loads(data.decode('utf-8'))['data']) #decode data into readable format and load into dict and print data key from dict
+    dict1 = json.loads(data.decode('utf-8')) #decode data into readable format and load into dict and print data key from dict
+    str1 = dict1['data'][0]['name'] + ', ' + str(dict1['data'][0]['country'])
+    print(str1)
  
 country(iss_location())
 
