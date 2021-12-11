@@ -1,5 +1,5 @@
 import requests
-import datetime
+import datetime 
 import json
 import http.client, urllib.parse
 
@@ -47,7 +47,8 @@ def country(coords):
     str1 = dict1['data'][0]['name'] + ', ' + str(dict1['data'][0]['country'])
     print(str1)
  
-country(iss_location())
+def world_location():
+    return country(iss_location)
 
 
     
