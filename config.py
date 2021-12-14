@@ -1,0 +1,2 @@
+weather_key="434f651f4f79eb1ae4078a4e1d76a2c7"
+space_key='8d292a338a1ce7bcfb8f14cda2777f84'
