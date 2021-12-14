@@ -1,7 +1,8 @@
 import requests
 import Space_Tracker
 import json
-API_KEY = "434f651f4f79eb1ae4078a4e1d76a2c7"
+import config
+API_KEY = config.weather_key
 
 
 
