@@ -18,7 +18,7 @@ def get_astros():
 
 
 #Function to get location of ISS in latitude and longitude 
-def iss_location():
+def iss_location(): 
     json_response = requests.get('http://api.open-notify.org/iss-now.json') #send GET request to endpoint 
 
     str_res = json.dumps(json_response.json(), indent=4, sort_keys=True) #represent json data as string
