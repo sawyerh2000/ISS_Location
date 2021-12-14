@@ -6,7 +6,8 @@ app=Flask(__name__)
 @app.route("/location") 
 def location():
      s = Space_Tracker.iss_location()
-     return render_template('location.html', loc=s)
+     w = Space_Tracker.world_location()
+     return render_template('location.html', loc=s, world=w)
 
 
 if __name__ == "__main__":

@@ -45,10 +45,23 @@ def country(coords):
     data = res.read()  #reads data 
     dict1 = json.loads(data.decode('utf-8')) #decode data into readable format and load into dict and print data key from dict
     str1 = dict1['data'][0]['name'] + ', ' + str(dict1['data'][0]['country'])
-    print(str1)
+    return str1
  
 def world_location():
-    return country(iss_location)
+    return country(iss_location())
+
+def coords(coords):
+    return coords.split(",")
+
+def getLat():
+    return coords(iss_location())[0]
+
+def getLong():
+    return coords(iss_location())[1]
+
+
+#world_location()
+
 
 
     
