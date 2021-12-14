@@ -2,9 +2,10 @@ import requests
 import datetime 
 import json
 import http.client, urllib.parse
+import config
 
 
-ACCESS_KEY = '8d292a338a1ce7bcfb8f14cda2777f84'
+ACCESS_KEY = config.space_key
 
 #Function to get the number and data of astronauts currently in space 
 def get_astros():
