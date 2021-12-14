@@ -10,7 +10,7 @@ def weather():
     param = {
     "lat" :  Space_Tracker.getLat(),
     "long" : Space_Tracker.getLong(),
-    "API_Key" : "434f651f4f79eb1ae4078a4e1d76a2c7"
+    "API_Key" : API_KEY
 }
 
     conn = requests.get("https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={long}&appid={API_Key}", params=param)
