@@ -5,7 +5,7 @@ API_KEY = "434f651f4f79eb1ae4078a4e1d76a2c7"
 
 
 
-def weather():
+def weather(): 
     param = {
     "lat" :  Space_Tracker.getLat(),
     "long" : Space_Tracker.getLong(),
