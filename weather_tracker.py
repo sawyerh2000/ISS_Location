@@ -7,7 +7,10 @@ API_KEY = config.weather_key
 
 
 def weather(): 
-    url = 'https://api.openweathermap.org/data/2.5/weather?lat=' + Space_Tracker.getLat() + '&lon=' + Space_Tracker.getLong() + '&appid='+API_KEY
+
+
+
+    url = "https://api.openweathermap.org/data/2.5/weather?lat=" + Space_Tracker.getLat() + "&lon=" + Space_Tracker.getLong() + "&units=imperial"+ "&appid=" + API_KEY
 
     conn = requests.get(url)
 
@@ -15,11 +18,14 @@ def weather():
 
     dict1 = json.loads(str1)
 
-    print(dict1)
+    return dict1
+
 
 
 print(Space_Tracker.world_location())
 weather()
+
+
 
 
 
