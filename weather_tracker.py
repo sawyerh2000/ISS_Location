@@ -7,21 +7,18 @@ API_KEY = config.weather_key
 
 
 def weather(): 
-    param = {
-    "lat" :  Space_Tracker.getLat(),
-    "long" : Space_Tracker.getLong(),
-    "API_Key" : API_KEY
-}
 
-    conn = requests.get("https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={long}&appid={API_Key}", params=param)
+    url = "https://api.openweathermap.org/data/2.5/weather?lat=" + Space_Tracker.getLat() + "&lon=" + Space_Tracker.getLong() + "&units=imperial"+ "&appid=" + API_KEY
+
+    conn = requests.get(url)
 
     str1 = json.dumps(conn.json(), indent=4, sort_keys=True)
 
     dict1 = json.loads(str1)
 
-    print(dict1)
+    return dict1
 
-weather()
+
 
 
 
