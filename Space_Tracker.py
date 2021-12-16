@@ -62,6 +62,8 @@ def getLong():
 
 
 #world_location()
+if __name__ == "__main__":
+    print(country(iss_location()))
 
 
 
