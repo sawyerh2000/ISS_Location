@@ -45,8 +45,11 @@ def country(coords):
     res = conn.getresponse() #reponse from endpoint (json data)
     data = res.read()  #reads data 
     dict1 = json.loads(data.decode('utf-8')) #decode data into readable format and load into dict and print data key from dict
-    str1 = dict1['data'][0]['name'] + ', ' + str(dict1['data'][0]['country'])
-    return str1
+    try:
+        str1 = dict1['data'][0]['name'] + ', ' + str(dict1['data'][0]['country'])
+        return str1 
+    except:
+        return "Unavailable, server failed to respond."
  
 def world_location():
     return country(iss_location())
@@ -61,9 +64,6 @@ def getLong():
     return coords(iss_location())[1]
 
 
-#world_location()
-if __name__ == "__main__":
-    print(country(iss_location()))
 
 
 
