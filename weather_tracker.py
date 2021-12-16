@@ -22,8 +22,20 @@ def weather():
 
 
 
-print(Space_Tracker.world_location())
-weather()
+def getCondition(weatherDict):
+    temperature = str(weatherDict['main']['temp'])
+    conditions = weatherDict['weather'][0]['description']
+    windspeed = str(weatherDict['wind']['speed'])
+
+    str1="The temperature is "+ temperature +", the current conditions are "+ conditions +", and the windspeed is " + windspeed
+
+    return str1
+
+if __name__ == '__main__':
+    print(Space_Tracker.world_location())
+    print(getCondition(weather()))
+
+
 
 
 
